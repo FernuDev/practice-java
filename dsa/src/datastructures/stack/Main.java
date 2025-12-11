@@ -8,5 +8,11 @@ public class Main {
         myStack.getHeight();
 
         myStack.printStack();
+
+        System.out.println("Apply push method: \n");
+        myStack.push(5);
+        myStack.push(10);
+
+        myStack.printStack();
     }
 }
