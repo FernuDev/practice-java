@@ -2,10 +2,8 @@ package datastructures.linkedlist;
 
 /**
  * Implementación de una Lista Enlazada Simple (Singly Linked List)
- * 
  * Una LinkedList es una estructura de datos lineal donde cada elemento (nodo)
  * contiene datos y una referencia al siguiente nodo en la secuencia.
- * 
  * Características:
  * - Inserción/eliminación eficiente en posiciones conocidas: O(1)
  * - Acceso secuencial: O(n)
@@ -22,15 +20,15 @@ public class LinkedList {
 
     /**
      * Clase interna que representa un nodo de la lista enlazada
-     * Cada nodo contiene un valueor y una referencia al siguiente nodo
+     * Cada nodo contiene un value y una referencia al siguiente nodo
      */
-    class Node {
+    static class Node {
         int value;  // Dato almacenado en el nodo
         Node next;  // Referencia al siguiente nodo
 
         /**
          * Constructor del nodo
-         * @param value El valueor a almacenar en el nodo
+         * @param value El value a almacenar en el nodo
          */
         public Node(int value) {
             this.value = value;
@@ -42,7 +40,7 @@ public class LinkedList {
      * Constructor que crea una lista con un elemento inicial
      * Complejidad: O(1)
      * 
-     * @param value El valueor del primer elemento de la lista
+     * @param value El value del primer elemento de la lista
      */
     public LinkedList(int value) {
         Node newNode = new Node(value);
@@ -65,7 +63,7 @@ public class LinkedList {
      * Agrega un elemento al final de la lista
      * Complejidad: O(1)
      * 
-     * @param value El valueor a agregar al final de la lista
+     * @param value El value a agregar al final de la lista
      */
     public void append(int value){
         Node newNode = new Node(value);
@@ -85,7 +83,7 @@ public class LinkedList {
      * Agrega un elemento al inicio de la lista
      * Complejidad: O(1)
      * 
-     * @param value El valueor a agregar al inicio de la lista
+     * @param value El value a agregar al inicio de la lista
      */
     public void prepend(int value){
         Node newNode = new Node(value);
@@ -197,11 +195,11 @@ public class LinkedList {
     }
 
     /**
-     * Modifica el valueor del nodo en el índice especificado
+     * Modifica el value del nodo en el índice especificado
      * Complejidad: O(n) - debido a la llamada a get()
      * 
      * @param index El índice del nodo a modificar
-     * @param value El nuevo valueor para el nodo
+     * @param value El nuevo value para el nodo
      * @return true si la modificación fue exitosa, false si el índice es inválido
      */
     public boolean set(int index, int value){
@@ -216,25 +214,24 @@ public class LinkedList {
     /**
      * Inserta un nuevo elemento en el índice especificado
      * Complejidad: O(n) - debido a la búsqueda del nodo anterior
-     * 
+     *
      * @param index El índice donde insertar el nuevo elemento
-     * @param value El valueor del nuevo elemento
-     * @return true si la inserción fue exitosa, false si el índice es inválido
+     * @param value El value del nuevo elemento
      */
-    public boolean insert(int index, int value){
+    public void insert(int index, int value){
 
         if (index < 0 || index > size){
-            return false;
+            return;
         }
 
         if (index == 0){
             prepend(value);
-            return true;
+            return;
         }
 
         if (index == size){
             append(value);
-            return true;
+            return;
         }
 
         // Insertar en el medio de la lista
@@ -245,7 +242,6 @@ public class LinkedList {
         temp.next = newNode;
         size++;
 
-        return true;
     }
 
     /**
@@ -280,7 +276,6 @@ public class LinkedList {
     /**
      * Invierte el orden de los elementos en la lista
      * Complejidad: O(n) tiempo, O(1) espacio
-     * 
      * Algoritmo: Usa tres punteros para invertir las conexiones nodo por nodo
      */
     public void reverse(){
@@ -335,7 +330,7 @@ public class LinkedList {
     }
 
     /**
-     * Imprime el valueor del primer nodo (head)
+     * Imprime el value del primer nodo (head)
      * Complejidad: O(1)
      */
     public void getHead() {
@@ -343,7 +338,7 @@ public class LinkedList {
     }
 
     /**
-     * Imprime el valueor del último nodo (tail)
+     * Imprime el value del último nodo (tail)
      * Complejidad: O(1)
      */
     public void getTail() {
