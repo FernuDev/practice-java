@@ -1,6 +1,24 @@
 package datastructures.stack;
 
 public class Main {
+
+    public static boolean isBalancedParentheses(String str) {
+        if (str.isEmpty()) return true;
+
+        StackArrayList<Character> stack = new StackArrayList<>();
+
+        for (char c : str.toCharArray()) {
+            if ( c == '(') {
+                stack.push(c);
+            } else if (c == ')') {
+                if (stack.isEmpty()) return false;
+                stack.pop();
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
     public static void main(String[] args) {
         Stack myStack = new Stack(4);
 
