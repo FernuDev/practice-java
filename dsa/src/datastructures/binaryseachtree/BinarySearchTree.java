@@ -48,17 +48,15 @@ public class BinarySearchTree {
         if (root == null) return false;
 
         Node temp = root;
-        while(true) {
+        while(temp != null) {
             if (temp.value == value) return true;
             if (value < temp.value) { // Move to left node
-                if (temp.left == null) return false;
                 temp = temp.left;
             } else {
-                if (temp.right == null) return false;
                 temp = temp.right;
             }
         }
-
+        return false;
     }
 
 }
