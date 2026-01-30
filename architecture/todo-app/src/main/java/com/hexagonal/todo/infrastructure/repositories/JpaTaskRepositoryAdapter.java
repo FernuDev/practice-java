@@ -6,7 +6,6 @@ import com.hexagonal.todo.infrastructure.entities.TaskEntity;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class JpaTaskRepositoryAdapter implements TaskRepositoryPort {
 
